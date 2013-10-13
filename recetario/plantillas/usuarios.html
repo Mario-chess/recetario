@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% comment %} Un comentario cualquiera {% endcomment %}
+
+{% block titulo %} Usuarios {% endblock %}
+
+
+{% block encabezado %}
+	<h1>Colaboradores</h1>
+{% endblock %}
+
+{% block contenido %}
+	<a href="/usuario/nuevo/">Agregar Nuevo Usuario</a><br><br>
+
+	<ul>
+		{% for dato in usuarios %}
+		<li>
+			{{ dato.username|capfirst }}
+			<em>
+				{{ dato.email }}
+			</em>
+			<ul>
+				{% for item in recetas %}
+					{% if item.usuario == dato %}
+					<li>
+						{{ item }}
+					</li>					
+					{% endif %}
+
+					{% empty %}
+					<li>
+						Este usuario aun no registro recetas.
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		{% empty %}
+		<li>
+			No hay Usuarios registrados.
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}	

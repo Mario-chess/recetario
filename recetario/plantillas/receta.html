@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% comment %} Un comentario cualquiera {% endcomment %}
+
+{% block titulo %} {{receta.titulo}} {% endblock %}
+
+{% block estilos %}
+	img 
+		{ 
+			width:150px; 
+			height:150px;
+		}
+{% endblock %}
+
+
+{% block encabezado %}
+	<h1>{{receta.titulo|title}}</h1>
+{% endblock %}
+
+
+{% block contenido %}
+	<div id="ingredientes">
+		<h2>Ingredientes</h2>
+		{{ receta.ingredientes }}
+	</div>
+
+	<div id="preparacion">
+		<h2>Preparación</h2>
+		{{ receta.preparacion }}
+	</div>
+
+	<div id="referencia">
+		<img src='{{MEDIA_URL}}{{receta.imagen}}'>
+	</div>
+
+	<div id="comentarios">
+		<h2>Comentarios</h2>
+		{% for item in comentarios %}
+			<p>{{ item.texto }}</p>
+		{% empty %}
+			<p>Sin Comentarios Registrados</p>
+		{% endfor %}
+	</div>
+{% endblock %}	
+
+
+{% block pie_pagina %}
+	<p>Registrado {{ receta.tiempo_registro }} por {{ receta.usuario }}</p>		
+
+	{% comment %}
+	<p>Registrado {{ receta.tiempo_registro|date:'SHORT_DATETIME_FORMAT' }} por {{ receta.usuario }}</p>
+	{% endcomment %}
+		
+{% endblock %}

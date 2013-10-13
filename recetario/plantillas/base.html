@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Recetario - {% block titulo %} {% endblock %} 
+	</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/base.css">
+
+	<style>
+		{% block estilos %} {% endblock %}
+	</style>
+</head>
+<body>
+	<header>
+		{% block encabezado %} {% endblock %}
+		<nav>
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/usuarios">Usuario Registrados</a></li>
+				<li><a href="/recetas">Recetas</a></li>
+				<li><a href="/comenta">Comenta</a></li>
+				<li><a href="/contacto">Contactanos</a></li>
+				<li><a href="/cerrar">Cerrar sesion</a></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<section class="contenido">
+		{% block contenido %} {% endblock %}
+	</section>
+
+	<footer>
+		{% block pie_pagina %} {% endblock %}
+	</footer>
+	
+</body>
+</html>

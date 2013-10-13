@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% comment %} Un comentario cualquiera {% endcomment %}
+
+{% block titulo %} Recetas {% endblock %}
+
+{% block estilos %}
+	img 
+	{ 
+		width:150px; 
+		height:150px;
+	}
+{% endblock %}
+
+{% block encabezado %}
+	<h1>Nuestras Recetas</h1>
+{% endblock %}
+
+{% block contenido %}
+	<a href="/receta/nueva/">Agregar Nueva Receta</a>
+
+	<ul>
+		{% for dato in recetas %}
+		<li>
+			<a href="/receta/{{ dato.id }}">{{ dato.titulo }}</a>
+			<br>
+			<img src='{{MEDIA_URL}}{{dato.imagen}}'>
+		</li>
+		{% empty %}
+		<li>Aun no hay recetas registadas</li>
+		{% endfor %}
+	</ul>
+{% endblock %}	
+
+
