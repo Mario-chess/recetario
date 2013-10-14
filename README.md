@@ -1,4 +1,4 @@
-Actividades de Fin de Semama
+ACTIVIDADES DE FINDE SEMANA - 13/10/2013
 
 * Se realizo un programa de Recetario,siguiendo la guia de Maestros del Web.
 
@@ -21,7 +21,9 @@ Una vez configurado el proyecto se procedio con la clonacion del Proyecto desde 
 
 * Una vez solucionada eso, el sistema corria con normalidad, pero los estilos y demás, es decir el STATIC_URL no se reconociá, es ahi donde me demore y finalmente me di cuenta que habia que agregar esta ruta desde la interfaz del Server.
 
-*Finalmente el proyecto corre al igual que en mi PC de desarrollo.
+* Finalmente el proyecto corre al igual que en mi PC de desarrollo.
 
-Nota: Es necesario limitar el tamaño de las imagenes, ya que se tarda demasiado en cargar...
-Nota: Es necesario optimizar para hacer todo mas veloz.
+Nota: 
+* Es necesario limitar el tamaño de las imagenes, ya que se tarda demasiado en cargar...
+
+* Nota: Es necesario optimizar para hacer todo mas veloz.
